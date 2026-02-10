@@ -23,27 +23,27 @@ import { TextAnimate } from "@/components/ui/text-animate";
 const features = [
   {
     icon: MessageSquare,
-    title: "Chat-first coding",
+    title: "Chat, not terminal",
     description:
-      "Talk to Claude in a real chat interface. Responses stream in real-time with markdown rendering, syntax highlighting, and collapsible tool calls.",
+      "Your Claude Code conversations, transformed. Real chat bubbles, streamed markdown, syntax highlighting — not raw JSON scrolling past in a terminal window.",
   },
   {
     icon: FolderTree,
-    title: "Built-in editor & file tree",
+    title: "Your codebase, always visible",
     description:
-      "Browse your project and edit code without leaving the app. Monaco editor with language detection, multi-tab support, and Cmd+S save.",
+      "File tree and Monaco editor sit right next to the chat. Browse, edit, and save without switching to VS Code. Everything in one view.",
   },
   {
     icon: Eye,
-    title: "See everything Claude does",
+    title: "Full transparency",
     description:
-      "Watch Claude think, read files, and write code live. Every tool call, every edit, every thought process — visible and collapsible.",
+      "Every tool call, file read, and thought process — visible and collapsible. No more guessing what Claude did. You see it happen live.",
   },
   {
     icon: Layers,
-    title: "Workspace tabs",
+    title: "One tab per project",
     description:
-      "Switch between projects instantly. Each workspace gets its own folder, editor state, and Claude session — like browser tabs for codebases.",
+      "Each workspace keeps its own folder, editor state, and chat session. Switch between projects like browser tabs. Context stays where you left it.",
   },
 ];
 
@@ -52,21 +52,22 @@ const steps = [
     icon: FolderOpen,
     step: "01",
     title: "Open a folder",
-    description: "Pick any project directory. ClaudeFlow sets up a workspace with file tree, editor, and a fresh Claude session.",
+    description:
+      "Pick any project. Codrift creates a workspace with file tree, editor, and connects to Claude Code automatically.",
   },
   {
     icon: Send,
     step: "02",
-    title: "Start chatting",
+    title: "Chat naturally",
     description:
-      "Ask Claude to build features, fix bugs, or explain code. Use slash commands for quick actions like /commit or /review.",
+      "Type like you would in any chat app. Slash commands, markdown, multi-line — it just works. No CLI flags to remember.",
   },
   {
     icon: Sparkles,
     step: "03",
-    title: "Watch Claude code",
+    title: "Watch it flow",
     description:
-      "See Claude read your files, think through the problem, and write code — all streaming in real-time in the chat panel.",
+      "Claude reads your files, thinks, writes code — all streaming in real-time. Same power as the CLI, but you can actually follow along.",
   },
 ];
 
@@ -78,9 +79,9 @@ export default function Home() {
         <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-6">
           <div className="flex items-center gap-2">
             <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-white/10">
-              <span className="font-mono text-xs font-bold text-white">CF</span>
+              <span className="font-mono text-xs font-bold text-white">cd</span>
             </div>
-            <span className="font-semibold tracking-tight">ClaudeFlow</span>
+            <span className="font-semibold tracking-tight">Codrift</span>
           </div>
           <div className="flex items-center gap-4">
             <a
@@ -116,7 +117,7 @@ export default function Home() {
           <BlurFade delay={0.1}>
             <div className="mb-6 inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm">
               <AnimatedShinyText className="text-muted-foreground">
-                Built with Tauri v2 — Native & Fast
+                Not another AI IDE — your CLI, refined
               </AnimatedShinyText>
             </div>
           </BlurFade>
@@ -124,16 +125,23 @@ export default function Home() {
           <BlurFade delay={0.2}>
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
               <TextAnimate animation="blurInUp" by="word" once>
-                Claude Code, without the terminal
+                Claude Code feels different here
               </TextAnimate>
             </h1>
           </BlurFade>
 
           <BlurFade delay={0.4}>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
-              A native desktop IDE with a real chat UI, built-in file tree,
-              Monaco editor, and streaming tool visibility. Everything you need
-              to code with Claude, in one window.
+              Codrift takes Claude Code out of the terminal and into a native
+              desktop app. Same CLI you already use. Chat UI, file tree, code
+              editor, and full visibility into what Claude does — in one window.
+            </p>
+          </BlurFade>
+
+          <BlurFade delay={0.5}>
+            <p className="mx-auto mt-3 max-w-lg text-sm text-muted-foreground/60">
+              No subscription. No new AI model. You bring your Claude Code —
+              we make it smooth.
             </p>
           </BlurFade>
 
@@ -170,7 +178,7 @@ export default function Home() {
                   colorTo="#8b5cf6"
                   borderWidth={1}
                 />
-                {/* Fake title bar */}
+                {/* Title bar */}
                 <div className="flex h-10 items-center border-b border-white/5 bg-[#111] px-4">
                   <div className="flex gap-2">
                     <div className="h-3 w-3 rounded-full bg-[#ff5f57]" />
@@ -190,7 +198,10 @@ export default function Home() {
                 <div className="flex h-[340px] md:h-[420px]">
                   {/* File tree */}
                   <div className="w-[180px] shrink-0 border-r border-white/5 bg-[#0d0d0d] p-3 text-xs">
-                    <div className="mb-2 font-medium text-white/40 uppercase tracking-wider" style={{ fontSize: "10px" }}>
+                    <div
+                      className="mb-2 font-medium uppercase tracking-wider text-white/40"
+                      style={{ fontSize: "10px" }}
+                    >
                       Explorer
                     </div>
                     <div className="space-y-1 font-mono text-white/50">
@@ -243,7 +254,9 @@ export default function Home() {
                       <div className="text-white/30">
                         {"    "}&lt;<span className="text-blue-400">div</span>{" "}
                         <span className="text-green-400">className</span>=
-                        <span className="text-orange-300">{'"flex flex-col"'}</span>
+                        <span className="text-orange-300">
+                          {'"flex flex-col"'}
+                        </span>
                         &gt;
                       </div>
                       <div className="text-white/20">{"      "}...</div>
@@ -261,7 +274,8 @@ export default function Home() {
                       </div>
                       <div className="space-y-2">
                         <div className="rounded-lg bg-indigo-500/10 p-2.5 text-indigo-200/70">
-                          I&apos;ll add a dark mode toggle. Let me read the current header...
+                          I&apos;ll add a dark mode toggle. Let me read the
+                          current header...
                         </div>
                         <div className="rounded border border-white/5 bg-white/[0.02] p-2 text-white/40">
                           <div className="mb-1 text-[10px] text-white/20">
@@ -271,7 +285,11 @@ export default function Home() {
                         </div>
                         <div className="rounded-lg bg-indigo-500/10 p-2.5 text-indigo-200/70">
                           Done. I&apos;ve added a toggle button using
-                          <span className="font-mono text-indigo-300"> next-themes</span>.
+                          <span className="font-mono text-indigo-300">
+                            {" "}
+                            next-themes
+                          </span>
+                          .
                         </div>
                       </div>
                     </div>
@@ -285,23 +303,40 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Positioning statement */}
+      <section className="border-y border-white/5 py-16 md:py-20">
+        <div className="mx-auto max-w-3xl px-6 text-center">
+          <BlurFade delay={0.1} inView>
+            <p className="text-xl font-medium leading-relaxed text-muted-foreground md:text-2xl">
+              Warp made the terminal not suck.
+              <br />
+              Arc rethought the browser.
+              <br />
+              <span className="text-foreground">
+                Codrift does the same for Claude Code.
+              </span>
+            </p>
+          </BlurFade>
+        </div>
+      </section>
+
       {/* Features */}
       <section className="relative py-24 md:py-32">
         <div className="mx-auto max-w-6xl px-6">
           <BlurFade delay={0.1} inView>
             <div className="mb-4 text-center text-sm font-medium uppercase tracking-widest text-indigo-400">
-              Features
+              What changes
             </div>
           </BlurFade>
           <BlurFade delay={0.2} inView>
             <h2 className="mb-4 text-center text-3xl font-bold tracking-tight md:text-4xl">
-              Everything in one window
+              Same Claude Code. Better everything else.
             </h2>
           </BlurFade>
           <BlurFade delay={0.3} inView>
             <p className="mx-auto mb-16 max-w-xl text-center text-muted-foreground">
-              No more juggling terminal, editor, and browser. ClaudeFlow combines
-              everything into a single native app.
+              We don&apos;t replace your CLI — we put a proper interface around it.
+              The AI stays the same. The experience transforms.
             </p>
           </BlurFade>
 
@@ -343,7 +378,7 @@ export default function Home() {
           </BlurFade>
           <BlurFade delay={0.2} inView>
             <h2 className="mb-16 text-center text-3xl font-bold tracking-tight md:text-4xl">
-              Three steps to start coding
+              From terminal to flow in three steps
             </h2>
           </BlurFade>
 
@@ -409,15 +444,16 @@ export default function Home() {
         <div className="relative mx-auto max-w-3xl px-6 text-center">
           <BlurFade delay={0.1} inView>
             <h2 className="text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
-              Stop switching between
+              Your CLI deserves
               <br />
-              terminal and editor
+              a better interface
             </h2>
           </BlurFade>
           <BlurFade delay={0.2} inView>
             <p className="mx-auto mt-6 max-w-xl text-lg text-muted-foreground">
-              Download ClaudeFlow and start coding with Claude the way it should
-              feel. One window. Real chat. Full visibility.
+              Claude Code is powerful. Codrift makes it feel that way too. No
+              subscription, no lock-in — just a native app that turns your
+              terminal into something smooth.
             </p>
           </BlurFade>
           <BlurFade delay={0.3} inView>
@@ -447,7 +483,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="border-t border-white/5 py-8">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 text-sm text-muted-foreground">
-          <span>ClaudeFlow</span>
+          <span>Codrift</span>
           <div className="flex items-center gap-6">
             <a
               href="https://github.com"

@@ -13,20 +13,20 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ClaudeFlow — Claude Code, without the terminal",
+  title: "Codrift — Claude Code feels different here",
   description:
-    "A native desktop IDE with a real chat UI, built-in file tree, Monaco editor, and streaming tool visibility. Everything you need to code with Claude, in one window.",
+    "Codrift takes Claude Code out of the terminal and into a native desktop app. Chat UI, file tree, code editor, and full visibility — in one window. No subscription, no new AI.",
   openGraph: {
-    title: "ClaudeFlow — Claude Code, without the terminal",
+    title: "Codrift — Claude Code feels different here",
     description:
-      "A native desktop IDE with a real chat UI, built-in file tree, Monaco editor, and streaming tool visibility.",
+      "A native desktop app that transforms Claude Code from a raw CLI into a smooth chat IDE. Same AI, better experience.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "ClaudeFlow — Claude Code, without the terminal",
+    title: "Codrift — Claude Code feels different here",
     description:
-      "A native desktop IDE with a real chat UI, built-in file tree, Monaco editor, and streaming tool visibility.",
+      "A native desktop app that transforms Claude Code from a raw CLI into a smooth chat IDE. Same AI, better experience.",
   },
 };
 
